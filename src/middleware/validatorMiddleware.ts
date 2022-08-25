@@ -6,10 +6,12 @@ import {
   IsString,
   validateOrReject,
 } from "class-validator";
+import { Service } from "typedi";
 
-import { User } from "../../models/user";
+import { User } from "../models/user";
 
-export class ValidatorUser {
+@Service()
+class ValidatorUser {
   @IsNotEmpty()
   public readonly login: string;
   @IsString()
@@ -55,3 +57,5 @@ export class ValidatorUser {
     }
   }
 }
+
+export default ValidatorUser;

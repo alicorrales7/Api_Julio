@@ -14,6 +14,12 @@ class UserService {
     logger.info("UserService, insertUser called for insert user: " + login);
     return resultInsertUser;
   }
+
+  async findUser() {
+    const resultFind = this.userRepository.findUser();
+    logger.info("UserService, findUser called for find user ");
+    return resultFind;
+  }
 }
 
 export default UserService;
